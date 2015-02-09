@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'fileutils'
+
+RCS_COMMON_REPO_PATH = "../rcs-common/lib"
+
+RCS_COMMON_GEM_GLOB = "./Ruby/lib/ruby/gems/*/gems/rcs-common*/lib"
+
+def windows?
+  RbConfig::CONFIG['host_os'] =~ /mingw/
+end
+
+def check_env!
+  raise("Unable to find rcs-common repository") unless Dir.exists?(RCS_COMMON_REPO_PATH)
+  raise("Unable to find rcs-common gems folder") if Dir[RCS_COMMON_GEM_GLOB].empty?
+  raise("This is not a git repository") unless Dir.exists?(".git")
+  raise("Cannot find git executable") if `git --version` !~ /git version/
+end
+
+def create_symlink
+  remove_symlink
+
+  Dir[RCS_COMMON_GEM_GLOB].each do |path|
+    execute("rm -rf #{path}")
+    execute("ln -s #{File.expand_path(RCS_COMMON_REPO_PATH)}/ #{path}")
+  end
+end
+
+def remove_symlink
+  check_env!
+
+  Dir[RCS_COMMON_GEM_GLOB].each do |path|
+    execute("git reset #{path}")
+    execute("git clean -df #{path}")
+    execute("git checkout #{path}")
+  end
+end
+
+def execute(command)
+  puts(command)
+  system(command)
+end
+
+if windows?
+  # TODO: implement windows code if you need it
+  $stderr.puts("You cannot run this under Windows")
+  exit!(1)
+end
+
+ARGV << "--help" if ARGV.empty?
+
+OptionParser.new do |parser|
+  parser.banner = "Usage: #{File.basename(__FILE__)} [options]\n"
+  parser.on('-c', '--create', 'Create symlink') { create_symlink }
+  parser.on('-r', '--remove', 'Remove symlink') { remove_symlink }
+end.parse!
