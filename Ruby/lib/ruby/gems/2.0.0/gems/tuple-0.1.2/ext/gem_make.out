@@ -1,0 +1,28 @@
+C:/RCS/Ruby/bin/ruby.exe extconf.rb
+creating Makefile
+
+make "DESTDIR="
+generating tuple-i386-mingw32.def
+compiling tuple.c
+In file included from c:/RCS/Ruby/include/ruby-2.0.0/ruby.h:33:0,
+                 from tuple.c:1:
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:125:14: error: size of array 'ruby_check_sizeof_voidp' is negative
+In file included from c:/RCS/Ruby/include/ruby-2.0.0/ruby.h:33:0,
+                 from tuple.c:1:
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h: In function 'rb_float_value':
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:826:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h: In function 'rb_num2char_inline':
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:1214:35: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:1214:35: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:1214:35: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:1215:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:1215:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:1215:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h: In function 'rb_class_of':
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:1515:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h: In function 'rb_type':
+c:/RCS/Ruby/include/ruby-2.0.0/ruby/ruby.h:1532:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+tuple.c: At top level:
+tuple.c:2:24: fatal error: netinet/in.h: No such file or directory
+compilation terminated.
+make: *** [tuple.o] Error 1

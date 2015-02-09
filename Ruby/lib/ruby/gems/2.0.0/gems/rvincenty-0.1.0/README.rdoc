@@ -1,0 +1,37 @@
+= rvincenty
+
+This is a ruby implementation of the Vincenty's formulae to calcuclate the distance between
+two points on earth. The formula assumpts that the figure of the Earth is an oblate spheroid
+and is therefore much accurate than other methods which assume a spherical Earth.
+
+The code was heavily inspired by Chris Veness Javascript implementation and explainaitions:
+
+
+[Vincenty formula for distance between two Latitude/Longitude points] http://www.movable-type.co.uk/scripts/latlong-vincenty.html
+
+== Usage
+
+    require 'rvincenty'
+
+    point_a = 45.965, 63.305    # Baikonur Cosmodrome
+    point_b = 28.585, -80.651   # John F. Kennedy Space Center
+
+    distance = RVincenty.distance(point_a, point_b)
+
+    puts "Distance between %s and %s is %f km" % [point_a.inspect, point_b.inspect, distance / 1000]
+
+
+== Note on Patches/Pull Requests
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but
+  bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2009 Reto Schüttel. See LICENSE for details.

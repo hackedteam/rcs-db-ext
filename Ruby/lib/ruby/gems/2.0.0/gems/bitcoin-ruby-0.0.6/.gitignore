@@ -1,0 +1,17 @@
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+*.swp
+.rvmrc
+*.DS_Store
+tmp/
+log/
+rdoc/
+coverage/
+spec/bitcoin/fixtures/fake_chain
+*.conf
+*.db
+.rbx/
+/vendor
+.ruby-version

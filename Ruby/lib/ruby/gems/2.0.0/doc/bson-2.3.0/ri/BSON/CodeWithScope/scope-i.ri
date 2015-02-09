@@ -1,0 +1,7 @@
+U:RDoc::Attr[iI"
+scope:ETI"BSON::CodeWithScope#scope;FI"R;T:publico:RDoc::Markup::Document:@parts[	o:RDoc::Markup::Paragraph;	[I"@!attribute javascript;To:RDoc::Markup::Verbatim;	[I"-@return [ String ] The javascript code.
+;TI"@since 2.0.0
+;T:@format0o;
+;	[I"@!attribute scope;To;;	[I"*@return [ Hash ] The variable scope.
+;TI"@since 2.0.0;T;0:
+@fileI" lib/bson/code_with_scope.rb;T:0@omit_headings_from_table_of_contents_below0F@I"BSON::CodeWithScope;FcRDoc::NormalClass0
